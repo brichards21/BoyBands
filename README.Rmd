@@ -47,7 +47,7 @@ knitr::opts_chunk$set(
 First, let's read the Bands dataset into the Rmd.
 
 ```{r}
-Bands <- readRDS(file = "data.Rds")
+BoyBands
 ```
 
 
@@ -61,12 +61,12 @@ SOLUTION:
 
 ```{r message = FALSE, warning = FALSE}
 # tally the number of slow and pop songs in dataset
-tally(~ Bands$dance_speed, format = "perc")
+tally(~ BoyBands$danceSpeed, format = "perc")
 
 
 
-gghistogram(Bands, x = "highest_pos", add = "mean", rug = TRUE, 
-            color = "dance_speed", fill = "dance_speed",
+gghistogram(BoyBands, x = "highest_pos", add = "mean", rug = TRUE, 
+            color = "danceSpeed", fill = "danceSpeed",
              palette = c("#0073C2FF", "#FC4E07"),
             xlab = "Highest Position/Rank",
             title = "Distribution of Position by Dance Speed")
@@ -85,9 +85,9 @@ For this question, we will look at the distribution of highest ranked songs by '
 SOLUTION:
 
 ```{r message = FALSE, warning = FALSE}
-tally( ~ featuring_artist, data = Bands, format = "perc")
+tally( ~ featuring_artist, data = BoyBands, format = "perc")
 
-ggplot(Bands,
+ggplot(BoyBands,
   aes(x = featuring_artist, y = highest_pos, fill = featuring_artist)) +
   geom_boxplot() +
   theme_bw() +
@@ -107,8 +107,8 @@ It is also important to note here that only 14.5% of the songs in the dataset ha
 To answer this question, we will look at dot plots counting the number of songs debuted in each month, and then for each year separately.
 
 ```{r, message=FALSE}
-Bands$month <- factor(Bands$month ,levels = month.name)
-ggplot(Bands, aes(x = month, fill = month)) + 
+BoyBands$month <- factor(BoyBands$month ,levels = month.name)
+ggplot(BoyBands, aes(x = month, fill = month)) + 
   geom_dotplot() + 
   theme_bw() + 
   theme(legend.position = "none") + 
@@ -121,7 +121,7 @@ August debuted the most hit songs throughout the years. It debuted 10 hit songs 
 Now we can investigate the years.
 
 ```{r, message=FALSE}
-ggplot(Bands, aes(x = as.factor(year), fill = as.factor(year))) + geom_dotplot() + 
+ggplot(BoyBands, aes(x = as.factor(year), fill = as.factor(year))) + geom_dotplot() + 
   theme_bw() + 
   theme(legend.position = "none") + 
   labs(title = "Frequency of Hit Songs by Year", x = "Year") +
@@ -139,8 +139,8 @@ Then, we can check the min and max medians to see which months and years boy ban
 ### Months
 
 ```{r}
-Bands_months <- Bands[, c(6, 2)] %>%
-  mutate(month = as.numeric((Bands$month)))
+Bands_months <- BoyBands[, c(6, 2)] %>%
+  mutate(month = as.numeric((BoyBands$month)))
 
  Bands_months <- aggregate(Bands_months, list(Bands_months$month), median) %>%
    select(-Group.1) %>%
@@ -183,7 +183,7 @@ Now, let's move on to years.
 
 ```{r}
 
-Bands_years <- Bands[, c(5, 2)]
+Bands_years <- BoyBands[, c(5, 2)]
 
 # take the median highest position by year
  Bands_years <- aggregate(Bands_years, list(Bands_years$year), median) %>%

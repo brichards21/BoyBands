@@ -1,5 +1,5 @@
 Package: BoyBands
-Title: What the Package Does (One Line, Title Case)
+Title: Hit songs by boy bands between 1983-2017.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Breanna",
@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "brichards21@amherst.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package contains a data set called 'BoyBands' which contains an audio-visual history of 55 boybands that
+#' had at least 1 song on the US version of the Billboard Hot 100 between 1983 - 2017.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

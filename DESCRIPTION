@@ -7,8 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "brichards21@amherst.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package contains a data set called 'BoyBands' which contains an audio-visual history of 55 boybands that
-#' had at least 1 song on the US version of the Billboard Hot 100 between 1983 - 2017.
+Description: This package contains a data set called 'BoyBands' which contains an audio-visual history of 55 boybands that had at least 1 song on the US version of the Billboard Hot 100 between 1983 - 2017.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

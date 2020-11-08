@@ -7,7 +7,9 @@
 
 <!-- badges: end -->
 
-The goal of BoyBands is to …
+The ‘BoyBands’ package has a dataset called ‘BoyBands’ which contains an
+audio-visual history of 55 boybands that had at least 1 song on the US
+version of the Billboard Hot 100 between 1983 - 2017.
 
 ## Installation
 

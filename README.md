@@ -1,4 +1,6 @@
 
+![R](https://github.com/brichards21/BoyBands/workflows/R/badge.svg)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # BoyBands
